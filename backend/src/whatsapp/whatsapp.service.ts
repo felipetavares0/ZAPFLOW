@@ -18,7 +18,7 @@ export class WhatsappService implements OnModuleInit {
   private totalFailed = 0;
   private stopRequested = false;
 
-  private readonly CONFIG_PATH = path.join(process.cwd(), 'src/whatsapp/config/bot-config.json');
+  private readonly CONFIG_PATH = path.join(__dirname, 'config', 'bot-config.json');
   private userSessions = new Map<string, any>();
 
   onModuleInit() {
@@ -209,7 +209,7 @@ export class WhatsappService implements OnModuleInit {
 
   getBotTemplates() {
     try {
-      const templates = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/whatsapp/config/bot-templates.json'), 'utf8'));
+      const templates = JSON.parse(fs.readFileSync(path.join(__dirname, 'config', 'bot-templates.json'), 'utf8'));
       return templates;
     } catch {
       return [];

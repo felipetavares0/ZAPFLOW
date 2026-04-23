@@ -1,29 +1,67 @@
 {
   "enabled": true,
-  "welcomeMessage": "🏢 Olá, {{nome}}! Você está a um passo do seu novo imóvel na ZapFlow Imóveis.\nO que deseja fazer?",
+  "welcomeMessage": "🛒 Bem-vindo ao autoatendimento Arco-Mix e Arco-Vita, {{nome}}!\nComo podemos te ajudar hoje?",
+  "humanTimeoutMinutes": 5,
+  "humanTimeoutMessage": "⚠️ Olá {{nome}}, estamos com uma demanda muito alta de atendimentos no momento. Por favor, aguarde mais alguns instantes que um de nossos colaboradores já irá te responder!",
   "brands": [
     {
-      "id": "1",
-      "name": "Imobiliária",
-      "label": "🔑 Vendas e Locação",
+      "id": "arcomix",
+      "name": "Arco-Mix",
+      "label": "🍎 Arco-Mix (Supermercados)",
       "stores": [
-        "Quero Alugar",
-        "Quero Comprar",
-        "Quero Anunciar meu Imóvel",
-        "2ª Via de Boleto"
+        "Arco-Mix Camaragibe",
+        "Arco-Mix Prazeres",
+        "Arco-Mix Cabo",
+        "Arco-Mix Igarassu"
       ],
       "menu": [
         {
           "id": "1",
-          "label": "📸 Portfólio de Imóveis",
-          "action": "LINK",
-          "content": "https://imoveis.exemplo.com"
+          "label": "📅 Ver Ofertas da Semana",
+          "action": "MESSAGE",
+          "content": "Confira nossas ofertas imperdíveis no link: https://arcomix.com.br/ofertas"
         },
         {
           "id": "2",
-          "label": "🧑💬 Falar com um Corretor",
+          "label": "💳 Cartão Arco-Mix",
+          "action": "MESSAGE",
+          "content": "Para consultar seu limite ou fatura, acesse o portal do cliente ou digite seu CPF abaixo."
+        },
+        {
+          "id": "3",
+          "label": "🙋 Falar com Atendente",
           "action": "HUMAN",
-          "content": "Transferindo pro nosso corretor de plantão. Aguarde uns instantes."
+          "content": "Vou te transferir para um de nossos atendentes. Por favor, descreva sua dúvida enquanto aguarda."
+        }
+      ]
+    },
+    {
+      "id": "arcovita",
+      "name": "Arco-Vita",
+      "label": "💊 Arco-Vita (Farmácias)",
+      "stores": [
+        "Arco-Vita Boa Viagem",
+        "Arco-Vita Olinda",
+        "Arco-Vita Recife Antigo"
+      ],
+      "menu": [
+        {
+          "id": "1",
+          "label": "💊 Consultar Medicamento",
+          "action": "WEBHOOK",
+          "content": "https://api.arcomix.com.br/v1/stock-check"
+        },
+        {
+          "id": "2",
+          "label": "🚚 Entrega em Casa",
+          "action": "MESSAGE",
+          "content": "Fazemos entregas em até 1h! Peça pelo nosso site ou informe seu endereço."
+        },
+        {
+          "id": "3",
+          "label": "👨‍⚕️ Falar com Farmacêutico",
+          "action": "HUMAN",
+          "content": "Aguarde um momento, o farmacêutico de plantão já vai te atender."
         }
       ]
     }
