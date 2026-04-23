@@ -1,0 +1,61 @@
+{
+  "enabled": true,
+  "welcomeMessage": "👋 Olá, {{nome}}! Seja bem-vindo ao grupo Arco-Mix / Arco-Vita 🛒💚\nComo podemos te ajudar hoje?",
+  "brands": [
+    {
+      "id": "1",
+      "name": "Arco-Mix",
+      "label": "🛒 Arco-Mix (Ofertas)",
+      "stores": [
+        "Candeias",
+        "Areias",
+        "Massangana",
+        "Boa Viagem"
+      ],
+      "menu": [
+        {
+          "id": "1",
+          "label": "📲 Baixar o App",
+          "action": "LINK",
+          "content": "https://www.delivery.arcomix.com.br/app"
+        },
+        {
+          "id": "2",
+          "label": "🛒 Comprar Online",
+          "action": "LINK",
+          "content": "https://www.delivery.arcomix.com.br"
+        },
+        {
+          "id": "3",
+          "label": "🧑💬 Falar com Atendente",
+          "action": "HUMAN",
+          "content": "Aguarde um momento, um consultor da Arco-Mix já vai te atender."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Arco-Vita",
+      "label": "💚 Arco-Vita (Saúde)",
+      "stores": [
+        "Costa Dourada",
+        "Ipojuca",
+        "Sirinhaém"
+      ],
+      "menu": [
+        {
+          "id": "1",
+          "label": "📲 App Arco-Vita",
+          "action": "LINK",
+          "content": "https://www.delivery.arcomix.com.br/vita"
+        },
+        {
+          "id": "2",
+          "label": "🧑💬 Suporte Especializado",
+          "action": "HUMAN",
+          "content": "Oi! Um especialista em saúde da Arco-Vita já vai falar com você."
+        }
+      ]
+    }
+  ]
+}
