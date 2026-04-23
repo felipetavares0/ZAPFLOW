@@ -3,8 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Send, Users, Plus, Trash2, CheckCircle2, AlertCircle,
-  Loader2, MessageSquare, Upload, LogOut, Wifi, WifiOff, Download, 
-  Square, Image as ImageIcon, Video, BookOpen, X, Sparkles
+  Loader2, MessageSquare, Upload, Wifi, WifiOff, Download,
+  Square, Image as ImageIcon, Video, X, Sparkles, LogOut, BookOpen
 } from 'lucide-react';
 import api from '@/services/api';
 import { SmartphoneMockup } from '@/components/dashboard/SmartphoneMockup';

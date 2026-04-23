@@ -13,12 +13,12 @@ import {
   Sparkles,
   Store,
   Layout,
-  Smartphone,
   Library,
-  ChevronRight,
   ShieldCheck,
   Globe,
-  Bell
+  HeartPulse,
+  Utensils,
+  Building2
 } from 'lucide-react';
 import api from '@/services/api';
 import { SmartphoneMockup } from '@/components/dashboard/SmartphoneMockup';
@@ -27,7 +27,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface BotMenuOption {
   id: string;
   label: string;
-  action: 'TEXT' | 'LINK' | 'HUMAN';
+  action: 'TEXT' | 'LINK' | 'HUMAN' | 'WEBHOOK';
   content: string;
 }
 
@@ -201,7 +201,12 @@ export default function AutomationPage() {
                  {templates.map(tpl => (
                    <div key={tpl.id} className="group bg-slate-950 border border-slate-800 rounded-3xl p-6 flex flex-col hover:border-indigo-500 transition-all cursor-pointer" onClick={() => applyTemplate(tpl)}>
                       <div className="h-12 w-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center text-indigo-500 mb-4 group-hover:bg-indigo-500 group-hover:text-white transition-all">
-                         {tpl.id === 'retail' ? <Store className="h-6 w-6" /> : tpl.id === 'customer_service' ? <ShieldCheck className="h-6 w-6" /> : <Globe className="h-6 w-6" />}
+                         {tpl.id === 'retail' ? <Store className="h-6 w-6" /> : 
+                          tpl.id === 'customer_service' ? <ShieldCheck className="h-6 w-6" /> : 
+                          tpl.id === 'clinic' ? <HeartPulse className="h-6 w-6" /> :
+                          tpl.id === 'food_delivery' ? <Utensils className="h-6 w-6" /> :
+                          tpl.id === 'real_estate' ? <Building2 className="h-6 w-6" /> :
+                          <Globe className="h-6 w-6" />}
                       </div>
                       <h4 className="text-white font-bold mb-2">{tpl.name}</h4>
                       <p className="text-xs text-slate-500 mb-6 flex-1">{tpl.description}</p>
@@ -337,12 +342,25 @@ export default function AutomationPage() {
                         <h3 className="text-lg font-bold text-white flex items-center gap-2">
                            <Layout className="text-indigo-500 h-5 w-5" /> Botões de Ação
                         </h3>
+                        <button 
+                          onClick={() => updateBrand('menu', [...(currentBrand?.menu || []), { id: Date.now().toString(), label: 'Novo Botão', action: 'TEXT', content: '' }])}
+                          className="p-2 bg-indigo-500/10 text-indigo-500 rounded-xl hover:bg-indigo-600 hover:text-white transition-all"
+                        >
+                           <Plus className="h-4 w-4" />
+                        </button>
                      </div>
                      <div className="space-y-5">
                         {currentBrand?.menu.map((m, i) => (
-                           <div key={m.id} className="p-5 bg-slate-950/40 border border-slate-800 rounded-[2rem] space-y-4 hover:border-slate-700 transition-all">
+                           <div key={m.id || i} className="group p-5 bg-slate-950/40 border border-slate-800 rounded-[2rem] space-y-4 hover:border-slate-700 transition-all relative">
+                              <button 
+                                onClick={() => updateBrand('menu', currentBrand!.menu.filter((_, idx) => idx !== i))}
+                                className="absolute -top-3 -right-3 p-2 bg-rose-500/10 text-rose-500 rounded-xl opacity-0 group-hover:opacity-100 hover:bg-rose-500 hover:text-white transition-all shadow-lg backdrop-blur-md border border-slate-800/50"
+                                title="Remover Botão"
+                              >
+                                 <Trash2 className="h-4 w-4" />
+                              </button>
                               <div className="flex items-center gap-3">
-                                 <div className="h-8 w-8 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-500 text-xs font-black">{i + 1}</div>
+                                 <div className="h-8 w-8 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-500 text-xs font-black shrink-0">{i + 1}</div>
                                  <input 
                                    value={m.label}
                                    onChange={(e) => {
@@ -364,15 +382,18 @@ export default function AutomationPage() {
                                         list[i].action = e.target.value as any;
                                         updateBrand('menu', list);
                                       }}
-                                      className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-indigo-400 outline-none"
+                                      className="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs text-indigo-400 outline-none focus:ring-1 focus:ring-indigo-500"
                                     >
                                       <option value="TEXT">ENVIAR TEXTO</option>
                                       <option value="LINK">ABRIR LINK (SITE)</option>
                                       <option value="HUMAN">FALAR COM HUMANO</option>
+                                      <option value="WEBHOOK">FUNÇÃO / WEBHOOK (N8N/MAKE)</option>
                                     </select>
                                  </div>
                                  <div className="col-span-2">
-                                    <label className="text-[10px] font-black text-slate-700 uppercase mb-1 block">Conteúdo / URL</label>
+                                    <label className="text-[10px] font-black text-slate-700 uppercase mb-1 block">
+                                       {m.action === 'WEBHOOK' ? 'URL do Webhook (POST JSON)' : 'Conteúdo / URL'}
+                                    </label>
                                     <textarea 
                                       value={m.content}
                                       onChange={(e) => {

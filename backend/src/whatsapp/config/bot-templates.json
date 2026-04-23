@@ -5,27 +5,17 @@
     "description": "Fluxo hierárquico profissional com escolha de rede e lojas.",
     "config": {
       "enabled": true,
-      "welcomeMessage": "👋 Olá, {{nome}}! Seja bem-vindo ao grupo Arco-Mix / Arco-Vita 🛒💚\nComo podemos te ajudar hoje?",
+      "welcomeMessage": "👋 Olá, {{nome}}! Seja bem-vindo ao ZapFlow Varejo 🛒💚\nComo podemos te ajudar hoje?",
       "brands": [
         {
           "id": "1",
-          "name": "Arco-Mix",
-          "label": "🛒 Arco-Mix (Ofertas)",
-          "stores": ["Candeias", "Areias", "Massangana", "Boa Viagem"],
+          "name": "ZapFlow Supermercado",
+          "label": "🛒 Supermercado (Ofertas)",
+          "stores": ["Loja Centro", "Loja Zona Sul", "Loja Zona Norte"],
           "menu": [
-            { "id": "1", "label": "📲 Baixar o App", "action": "LINK", "content": "https://www.delivery.arcomix.com.br/app" },
-            { "id": "2", "label": "🛒 Comprar Online", "action": "LINK", "content": "https://www.delivery.arcomix.com.br" },
-            { "id": "3", "label": "🧑💬 Falar com Atendente", "action": "HUMAN", "content": "Aguarde um momento, um consultor da Arco-Mix já vai te atender." }
-          ]
-        },
-        {
-          "id": "2",
-          "name": "Arco-Vita",
-          "label": "💚 Arco-Vita (Saúde)",
-          "stores": ["Costa Dourada", "Ipojuca", "Sirinhaém"],
-          "menu": [
-            { "id": "1", "label": "📲 App Arco-Vita", "action": "LINK", "content": "https://www.delivery.arcomix.com.br/vita" },
-            { "id": "2", "label": "🧑💬 Suporte Especializado", "action": "HUMAN", "content": "Oi! Um especialista em saúde da Arco-Vita já vai falar com você." }
+            { "id": "1", "label": "📲 Baixar o App", "action": "LINK", "content": "https://www.exemplo.com.br/app" },
+            { "id": "2", "label": "🛒 Comprar Online", "action": "LINK", "content": "https://www.exemplo.com.br" },
+            { "id": "3", "label": "🧑💬 Falar com Atendente", "action": "HUMAN", "content": "Aguarde um momento, um consultor já vai te atender." }
           ]
         }
       ]
@@ -33,20 +23,20 @@
   },
   {
     "id": "customer_service",
-    "name": "Suporte ao Cliente",
-    "description": "Focado em resolução de dúvidas, SAC e atendimento humano.",
+    "name": "Suporte ao Cliente / SAC",
+    "description": "Focado em resolução de dúvidas, tickets e triagem para humanos.",
     "config": {
       "enabled": true,
-      "welcomeMessage": "🎧 Central de Atendimento\nOlá! Como podemos te ajudar agora?",
+      "welcomeMessage": "🎧 Central de Atendimento ZapFlow\nOlá, {{nome}}! Como podemos te ajudar agora?",
       "brands": [
         {
           "id": "1",
           "name": "Suporte Geral",
           "label": "🛠️ Suporte Técnico / SAC",
-          "stores": ["Dúvida sobre Pedido", "Problema no App", "Elogios/Sugestões"],
+          "stores": ["Dúvida sobre Pedido", "Problema Técnico", "Setor Financeiro", "Reclamações/Elogios"],
           "menu": [
-            { "id": "1", "label": "❓ Ver FAQs", "action": "TEXT", "content": "Você pode tirar suas dúvidas em: https://ajuda.exemplo.com" },
-            { "id": "2", "label": "🧑💬 Falar com Suporte", "action": "HUMAN", "content": "Conectando você ao nosso suporte técnico..." }
+            { "id": "1", "label": "❓ Ver FAQs", "action": "TEXT", "content": "Acesse nosso banco rápido de dúvidas: https://ajuda.exemplo.com" },
+            { "id": "2", "label": "🧑💬 Falar com Especialista", "action": "HUMAN", "content": "Conectando você ao nosso suporte técnico..." }
           ]
         }
       ]
@@ -54,20 +44,84 @@
   },
   {
     "id": "sales",
-    "name": "Vendas e Orçamentos",
-    "description": "Ideal para captura de leads e redirecionamento para o comercial.",
+    "name": "Captação de Leads B2B/B2C",
+    "description": "Ideal para vendas complexas, catálogos e direcionamento comercial.",
     "config": {
       "enabled": true,
-      "welcomeMessage": "🚀 Olá! Que bom ter você aqui.\nQual setor você deseja falar?",
+      "welcomeMessage": "🚀 Olá, {{nome}}! Que bom ter você aqui.\nQual de nossas soluções mais te interessa hoje?",
       "brands": [
         {
           "id": "1",
           "name": "Comercial",
-          "label": "💰 Quero Comprar / Orçamento",
-          "stores": ["Setor Atacado", "Setor Varejo", "Parcerias"],
+          "label": "💰 Consultoria & Vendas",
+          "stores": ["Soluções Empresariais (B2B)", "Produtos Varejo (B2C)", "Seja um Revendedor", "Orçamento Customizado"],
           "menu": [
-            { "id": "1", "label": "📄 Ver Catálogo", "action": "LINK", "content": "https://catalogo.exemplo.com" },
-            { "id": "2", "label": "🧑💬 Falar com Vendedor", "action": "HUMAN", "content": "Um de nossos consultores comerciais já vai falar com você!" }
+            { "id": "1", "label": "📄 Baixar Apresentação", "action": "LINK", "content": "https://catalogo.exemplo.com/download.pdf" },
+            { "id": "2", "label": "🧑💬 Reunião com Consultor", "action": "HUMAN", "content": "Perfeito! Um de nossos especialistas comerciais já vai falar com você." }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "clinic",
+    "name": "Clínica & Odonto",
+    "description": "Agendamentos, especialidades e tira-dúvidas de convênios.",
+    "config": {
+      "enabled": true,
+      "welcomeMessage": "🏥 Olá, {{nome}}! Bem-vindo à Clínica ZapFlow Saúde.\nEscolha abaixo seu setor de atendimento:",
+      "brands": [
+        {
+          "id": "1",
+          "name": "Recepção Médica",
+          "label": "🩺 Agendar Consulta/Exame",
+          "stores": ["Clínica Geral", "Dermatologia", "Odontologia", "Laboratório de Exames"],
+          "menu": [
+            { "id": "1", "label": "📅 Agendamento Virtual", "action": "LINK", "content": "https://agendamentos.exemplo.com" },
+            { "id": "2", "label": "💳 Convênios Aceitos", "action": "TEXT", "content": "Aceitamos Unimed, SulAmérica, Bradesco Saúde e Amil." },
+            { "id": "3", "label": "🧑💬 Falar com Recepcionista", "action": "HUMAN", "content": "Você entrará em contato com a mesa principal. Só um momento." }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "food_delivery",
+    "name": "Restaurante & Delivery",
+    "description": "Cardápio digital, status de pedido e envio direto pro caixa.",
+    "config": {
+      "enabled": true,
+      "welcomeMessage": "🍔 E aí, {{nome}}, bateu a fome? Bem-vindo ao ZapFlow Burger!\nConfira as opções:",
+      "brands": [
+        {
+          "id": "1",
+          "name": "Delivery",
+          "label": "🛵 Fazer Pedido/Delivery",
+          "stores": ["Ver Cardápio", "Consultar Status do Pedido", "Promoções de Hoje"],
+          "menu": [
+            { "id": "1", "label": "🍔 Cardápio Digital (iFood)", "action": "LINK", "content": "https://ifood.com.br/meu-restaurante" },
+            { "id": "2", "label": "🧑💬 Ajuda com Pedido Atual", "action": "HUMAN", "content": "Beleza! O nosso caixa já vai conferir o que aconteceu." }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "real_estate",
+    "name": "Imobiliária & Corretores",
+    "description": "Locação, venda de imóveis e contato direto com corretores.",
+    "config": {
+      "enabled": true,
+      "welcomeMessage": "🏢 Olá, {{nome}}! Você está a um passo do seu novo imóvel na ZapFlow Imóveis.\nO que deseja fazer?",
+      "brands": [
+        {
+          "id": "1",
+          "name": "Imobiliária",
+          "label": "🔑 Vendas e Locação",
+          "stores": ["Quero Alugar", "Quero Comprar", "Quero Anunciar meu Imóvel", "2ª Via de Boleto"],
+          "menu": [
+            { "id": "1", "label": "📸 Portfólio de Imóveis", "action": "LINK", "content": "https://imoveis.exemplo.com" },
+            { "id": "2", "label": "🧑💬 Falar com um Corretor", "action": "HUMAN", "content": "Transferindo pro nosso corretor de plantão. Aguarde uns instantes." }
           ]
         }
       ]

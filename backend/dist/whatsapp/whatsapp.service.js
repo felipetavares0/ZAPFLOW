@@ -342,6 +342,28 @@ let WhatsappService = WhatsappService_1 = class WhatsappService {
                 this.userSessions.set(from, session);
                 await this.client.sendMessage(from, replaceVars(option.content));
             }
+            else if (option.action === 'WEBHOOK') {
+                const webhookUrl = replaceVars(option.content);
+                await this.client.sendMessage(from, `⚙️ Processando sua solicitação no sistema...\nPor favor, aguarde.`);
+                try {
+                    await fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            phone: from,
+                            name: session.clientName,
+                            brand: session.selectedBrandName,
+                            store: session.selectedStore,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                    await this.client.sendMessage(from, `✅ Solicitação registrada com sucesso no sistema (Integração customizada executada)!`);
+                }
+                catch (e) {
+                    this.logger.error(`Erro ao engatilhar função/webhook no URL ${webhookUrl}`);
+                    await this.client.sendMessage(from, `❌ Houve uma pequena instabilidade ao acionar o sistema interno. Tente novamente mais tarde.\n\nDigite *0* para voltar ao menu.`);
+                }
+            }
             else {
                 await this.client.sendMessage(from, `${replaceVars(option.content)}\n\nDigite *0* para voltar ao menu.`);
             }

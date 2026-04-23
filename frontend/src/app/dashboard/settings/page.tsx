@@ -27,7 +27,7 @@ export default function SettingsPage() {
   const [status, setStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
   // Tokens State
-  const [apiToken, setApiToken] = useState('arcomix_live_g9Lkx21qR8T01Y');
+  const [apiToken, setApiToken] = useState('zapflow_live_g9Lkx21qR8T01Y');
   const [copied, setCopied] = useState(false);
 
   // Notifications State
@@ -88,7 +88,7 @@ export default function SettingsPage() {
   const generateNewToken = () => {
     if (confirm('Gerar um novo token invalidará o token atual. Deseja continuar?')) {
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      let result = 'arcomix_live_';
+      let result = 'zapflow_live_';
       for (let i = 0; i < 16; i++) {
         result += chars.charAt(Math.floor(Math.random() * chars.length));
       }
@@ -196,7 +196,7 @@ export default function SettingsPage() {
                 Tokens de API (Acesso para Integrações)
               </h3>
               <p className="text-slate-400 text-sm">
-                Utilize este token para conectar sistemas externos (CRMs, N8N, Typebot) aos endpoints do Arco-Mix. Mantenha esta chave em segredo absoluto.
+                Utilize este token para conectar sistemas externos (CRMs, N8N, Typebot) aos endpoints do ZapFlow. Mantenha esta chave em segredo absoluto.
               </p>
               
               <div className="mt-6 space-y-4">

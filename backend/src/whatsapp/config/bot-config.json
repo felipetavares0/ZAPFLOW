@@ -1,59 +1,29 @@
 {
   "enabled": true,
-  "welcomeMessage": "👋 Olá, {{nome}}! Seja bem-vindo ao grupo Arco-Mix / Arco-Vita 🛒💚\nComo podemos te ajudar hoje?",
+  "welcomeMessage": "🏢 Olá, {{nome}}! Você está a um passo do seu novo imóvel na ZapFlow Imóveis.\nO que deseja fazer?",
   "brands": [
     {
       "id": "1",
-      "name": "Arco-Mix",
-      "label": "🛒 Arco-Mix (Ofertas)",
+      "name": "Imobiliária",
+      "label": "🔑 Vendas e Locação",
       "stores": [
-        "Candeias",
-        "Areias",
-        "Massangana",
-        "Boa Viagem"
+        "Quero Alugar",
+        "Quero Comprar",
+        "Quero Anunciar meu Imóvel",
+        "2ª Via de Boleto"
       ],
       "menu": [
         {
           "id": "1",
-          "label": "📲 Baixar o App",
+          "label": "📸 Portfólio de Imóveis",
           "action": "LINK",
-          "content": "https://www.delivery.arcomix.com.br/app"
+          "content": "https://imoveis.exemplo.com"
         },
         {
           "id": "2",
-          "label": "🛒 Comprar Online",
-          "action": "LINK",
-          "content": "https://www.delivery.arcomix.com.br"
-        },
-        {
-          "id": "3",
-          "label": "🧑💬 Falar com Atendente",
+          "label": "🧑💬 Falar com um Corretor",
           "action": "HUMAN",
-          "content": "Aguarde um momento, um consultor da Arco-Mix já vai te atender."
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Arco-Vita",
-      "label": "💚 Arco-Vita (Saúde)",
-      "stores": [
-        "Costa Dourada",
-        "Ipojuca",
-        "Sirinhaém"
-      ],
-      "menu": [
-        {
-          "id": "1",
-          "label": "📲 App Arco-Vita",
-          "action": "LINK",
-          "content": "https://www.delivery.arcomix.com.br/vita"
-        },
-        {
-          "id": "2",
-          "label": "🧑💬 Suporte Especializado",
-          "action": "HUMAN",
-          "content": "Oi! Um especialista em saúde da Arco-Vita já vai falar com você."
+          "content": "Transferindo pro nosso corretor de plantão. Aguarde uns instantes."
         }
       ]
     }

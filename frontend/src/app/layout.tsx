@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Arco-Mix / Arco-Vita",
+  title: "ZapFlow",
   description: "Plataforma Premium de Disparos em Massa para WhatsApp na Meta Cloud API.",
 };
 
@@ -31,8 +31,8 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{
           __html: `
             if (typeof window !== 'undefined') {
-              localStorage.setItem('arcomix_token', 'demo-token');
-              localStorage.setItem('arcomix_user', JSON.stringify({ name: 'Admin', email: 'admin@arcomix.com', role: 'ADMIN' }));
+              localStorage.setItem('zapflow_token', 'demo-token');
+              localStorage.setItem('zapflow_user', JSON.stringify({ name: 'Admin', email: 'admin@zapflow.com', role: 'ADMIN' }));
             }
           `
         }} />

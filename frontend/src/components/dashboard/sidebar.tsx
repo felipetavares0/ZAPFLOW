@@ -30,9 +30,16 @@ export function Sidebar() {
 
   return (
     <div className="flex flex-col w-64 bg-slate-900 border-r border-slate-800 h-screen text-slate-300">
-      <div className="flex items-center h-16 px-6 border-b border-slate-800">
-        <Zap className="h-8 w-8 text-indigo-500 fill-indigo-500" />
-        <span className="ml-3 text-xl font-bold text-white tracking-tight">Arco-Mix / Arco-Vita</span>
+      <div className="flex items-center h-20 px-6 border-b border-slate-800 bg-slate-900/50">
+        <div className="relative flex items-center justify-center h-10 w-10 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 shadow-lg shadow-indigo-500/30 ring-1 ring-white/10 shrink-0">
+          <Zap className="h-6 w-6 text-white drop-shadow-md" />
+          <div className="absolute -bottom-1 -right-1 h-3 w-3 bg-emerald-400 rounded-full border-2 border-slate-900 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
+        </div>
+        <div className="ml-3 flex flex-col justify-center">
+          <span className="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">
+            ZapFlow
+          </span>
+        </div>
       </div>
       
       <div className="flex-1 overflow-y-auto py-6 px-4 space-y-1">

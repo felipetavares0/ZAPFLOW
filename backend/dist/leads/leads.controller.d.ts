@@ -6,9 +6,9 @@ export declare class LeadsController {
         number: string;
         name: string | null;
         id: string;
-        tenantId: string;
         createdAt: Date;
         updatedAt: Date;
+        tenantId: string;
         tags: string[];
         lastInteraction: Date | null;
     }[]>;
@@ -20,9 +20,9 @@ export declare class LeadsController {
         number: string;
         name: string | null;
         id: string;
-        tenantId: string;
         createdAt: Date;
         updatedAt: Date;
+        tenantId: string;
         tags: string[];
         lastInteraction: Date | null;
     }>;
@@ -37,9 +37,9 @@ export declare class LeadsController {
         number: string;
         name: string | null;
         id: string;
-        tenantId: string;
         createdAt: Date;
         updatedAt: Date;
+        tenantId: string;
         tags: string[];
         lastInteraction: Date | null;
     }>;

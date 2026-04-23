@@ -6,7 +6,7 @@ const api = axios.create({
 
 // Interceptor para adicionar o token JWT em todas as requisições
 api.interceptors.request.use((config) => {
-  const token = typeof window !== 'undefined' ? localStorage.getItem('arcomix_token') : null;
+  const token = typeof window !== 'undefined' ? localStorage.getItem('zapflow_token') : null;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

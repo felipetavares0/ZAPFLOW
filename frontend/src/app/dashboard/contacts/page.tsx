@@ -127,7 +127,7 @@ export default function ContactsPage() {
           </button>
           <button 
             onClick={() => {
-              const csvContent = "numero,nome\n5581999990000,João Silva\n5581888880000,Arco Mix Exemplo";
+              const csvContent = "numero,nome\n5581999990000,João Silva\n5581888880000,ZapFlow Exemplo";
               const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
               const url = URL.createObjectURL(blob);
               const link = document.createElement("a");

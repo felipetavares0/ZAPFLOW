@@ -17,7 +17,7 @@ export default function DashboardPage() {
   const [user, setUser] = useState<{ name?: string; email?: string } | null>(null);
 
   useEffect(() => {
-    const stored = localStorage.getItem('arcomix_user');
+    const stored = localStorage.getItem('zapflow_user');
     if (stored) setUser(JSON.parse(stored));
     fetchStatus();
     const interval = setInterval(fetchStatus, 5000);

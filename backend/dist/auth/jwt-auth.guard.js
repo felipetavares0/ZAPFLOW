@@ -14,7 +14,7 @@ let JwtAuthGuard = class JwtAuthGuard extends (0, passport_1.AuthGuard)('jwt') {
         const request = context.switchToHttp().getRequest();
         request.user = {
             userId: 'admin-fixed-id',
-            email: 'admin@arcomix.com',
+            email: 'admin@zapflow.com',
             tenantId: 'd65e8a60-9d33-4f1b-a08e-f14d9b33a7f8',
             role: 'ADMIN'
         };

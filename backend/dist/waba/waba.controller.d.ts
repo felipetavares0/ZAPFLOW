@@ -4,9 +4,9 @@ export declare class WabaController {
     constructor(wabaService: WabaService);
     createConfig(req: any, body: any): Promise<{
         id: string;
-        tenantId: string;
         createdAt: Date;
         updatedAt: Date;
+        tenantId: string;
         phoneNumberId: string;
         wabaId: string;
         accessToken: string;
@@ -15,9 +15,9 @@ export declare class WabaController {
     }>;
     getConfigs(req: any): Promise<{
         id: string;
-        tenantId: string;
         createdAt: Date;
         updatedAt: Date;
+        tenantId: string;
         phoneNumberId: string;
         wabaId: string;
         accessToken: string;

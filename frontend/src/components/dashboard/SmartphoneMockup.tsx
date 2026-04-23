@@ -51,10 +51,10 @@ export function SmartphoneMockup({
             <ChevronLeft className="h-5 w-5" />
           </button>
           <div className="h-9 w-9 rounded-full bg-slate-200 border-2 border-white/20 overflow-hidden">
-             <img src={`https://ui-avatars.com/api/?name=Arco+Mix&background=075E54&color=fff`} alt="Avatar" />
+             <img src={`https://ui-avatars.com/api/?name=Zap+Flow&background=075E54&color=fff`} alt="Avatar" />
           </div>
           <div className="ml-1">
-            <p className="text-[14px] font-bold leading-tight">Suporte Arco-Mix</p>
+            <p className="text-[14px] font-bold leading-tight">Suporte ZapFlow</p>
             <p className="text-[10px] text-emerald-400 flex items-center gap-1">
               <span className="h-1.5 w-1.5 bg-emerald-400 rounded-full animate-pulse"></span> online
             </p>
