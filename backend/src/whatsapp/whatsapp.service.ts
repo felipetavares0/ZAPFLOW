@@ -33,7 +33,7 @@ export class WhatsappService implements OnModuleInit {
         dataPath: './.wpp-sessions',
       }),
       puppeteer: {
-        headless: true, // Ou 'new' se suportado pela versão
+        headless: true,
         args: [
           '--no-sandbox',
           '--disable-setuid-sandbox',
@@ -41,9 +41,11 @@ export class WhatsappService implements OnModuleInit {
           '--disable-accelerated-2d-canvas',
           '--no-first-run',
           '--no-zygote',
+          ...(process.platform === 'win32' ? ['--single-process'] : []),
           '--disable-gpu',
           '--proxy-server="direct://"',
-          '--proxy-bypass-list=*'
+          '--proxy-bypass-list=*',
+          '--ignore-certificate-errors'
         ],
       },
     });

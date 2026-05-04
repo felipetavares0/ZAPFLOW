@@ -55,7 +55,7 @@ let WhatsappService = WhatsappService_1 = class WhatsappService {
     totalSent = 0;
     totalFailed = 0;
     stopRequested = false;
-    CONFIG_PATH = path.join(process.cwd(), 'src/whatsapp/config/bot-config.json');
+    CONFIG_PATH = path.join(__dirname, 'config', 'bot-config.json');
     userSessions = new Map();
     onModuleInit() {
         this.initClient();
@@ -216,7 +216,7 @@ let WhatsappService = WhatsappService_1 = class WhatsappService {
     }
     getBotTemplates() {
         try {
-            const templates = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src/whatsapp/config/bot-templates.json'), 'utf8'));
+            const templates = JSON.parse(fs.readFileSync(path.join(__dirname, 'config', 'bot-templates.json'), 'utf8'));
             return templates;
         }
         catch {

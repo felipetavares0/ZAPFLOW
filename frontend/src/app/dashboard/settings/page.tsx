@@ -156,23 +156,23 @@ export default function SettingsPage() {
               <div className="space-y-4">
                 <div>
                   <label className="block text-xs font-black uppercase text-slate-500 mb-1 tracking-widest">WhatsApp Business Account ID (WABA ID)</label>
-                  <input type="text" value={config.wabaId} onChange={(e) => setConfig({ ...config, wabaId: e.target.value })} placeholder="Ex: 1045618215XXXXX" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
+                  <input type="text" value={config.wabaId} onChange={(e) => setConfig({ ...config, wabaId: e.target.value })} autoComplete="off" placeholder="Insira o WABA ID" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4">
                    <div>
                      <label className="block text-xs font-black uppercase text-slate-500 mb-1 tracking-widest">Phone Number ID</label>
-                     <input type="text" value={config.phoneNumberId} onChange={(e) => setConfig({ ...config, phoneNumberId: e.target.value })} placeholder="Ex: 1109318215XXXXX" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
+                     <input type="text" value={config.phoneNumberId} onChange={(e) => setConfig({ ...config, phoneNumberId: e.target.value })} autoComplete="off" placeholder="Insira o ID do Telefone" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
                    </div>
                    <div>
                      <label className="block text-xs font-black uppercase text-slate-500 mb-1 tracking-widest">Número (Com DDI)</label>
-                     <input type="text" value={config.phoneNumber} onChange={(e) => setConfig({ ...config, phoneNumber: e.target.value })} placeholder="Ex: 5581999999999" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
+                     <input type="text" value={config.phoneNumber} onChange={(e) => setConfig({ ...config, phoneNumber: e.target.value })} autoComplete="off" placeholder="Somente números (Ex: 5511999999999)" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50" />
                    </div>
                 </div>
 
                 <div>
                   <label className="block text-xs font-black uppercase text-slate-500 mb-1 tracking-widest">System User Access Token (Permanente)</label>
-                  <input type="password" value={config.accessToken} onChange={(e) => setConfig({ ...config, accessToken: e.target.value })} placeholder="EAADXXXX..." className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50 font-mono text-sm" />
+                  <input type="password" value={config.accessToken} onChange={(e) => setConfig({ ...config, accessToken: e.target.value })} autoComplete="new-password" placeholder="Insira o Token de Acesso Permanente" className="w-full bg-slate-950 border border-slate-800 rounded-xl py-3 px-4 text-white focus:outline-none focus:border-indigo-500/50 font-mono text-sm" />
                 </div>
               </div>
 
